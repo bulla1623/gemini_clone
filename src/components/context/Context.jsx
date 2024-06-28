@@ -14,9 +14,13 @@ const ContextProvider = (props) => {
     const delayPara = (index, nextWord) => {
         setTimeout(function () {
             setResultData((prev) => prev + nextWord);
-        }, 75 * index);
+        }, 25 * index);
     };
 
+    const newChat = () => {
+        setLoading(false);
+        setShowResults(false);
+    }
     const onSent = async (prompt) => {
         setResultData("");
         setLoading(true);
@@ -67,6 +71,7 @@ const ContextProvider = (props) => {
         showResults,
         loading,
         resultData,
+        newChat,
     };
     return (
         <Context.Provider value={contextValue}>{props.children}</Context.Provider>
