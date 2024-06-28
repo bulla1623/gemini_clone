@@ -46,9 +46,10 @@ async function runChat(prompt) {
         history: [],
     });
 
-    const result = await chat.sendMessage(prompt);
-    const response = result.response;
-    console.log(response.text());
+	const result = await chat.sendMessage(prompt);
+	const response = result.response;
+	console.log(response.text());
+	return response.text();
 }
 
 export default runChat;
